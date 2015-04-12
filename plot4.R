@@ -5,6 +5,9 @@
 # Date: 2015-04-12                                                             #
 ################################################################################
 
+# set language to English
+Sys.setlocale(locale="English")
+
 # read the source data
 unzip("exdata_data_household_power_consumption.zip")
 mydata <- read.table("household_power_consumption.txt", header=T, sep=";", na.strings="?")
@@ -29,7 +32,7 @@ plot(mydata$DateTime, mydata$Voltage, type="l", xlab="datetime", ylab="Voltage")
 plot(mydata$DateTime, mydata$Sub_metering_1, type="l", xlab="", ylab="Energy sub metering")
 lines(mydata$DateTime, mydata$Sub_metering_2, type="l", col="red")
 lines(mydata$DateTime, mydata$Sub_metering_3, type="l", col="blue")
-legend("topright", col=c("black","red","blue"), lty=1, legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
+legend("topright", col=c("black","red","blue"), bty="n", lty=1, legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
 
 plot(mydata$DateTime, mydata$Global_reactive_power, type="l", xlab="datetime", ylab="Global_reactive_power")
 

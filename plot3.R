@@ -5,6 +5,9 @@
 # Date: 2015-04-12                                                             #
 ################################################################################
 
+# set language to English
+Sys.setlocale(locale="English")
+
 # read the source data
 unzip("exdata_data_household_power_consumption.zip")
 mydata <- read.table("household_power_consumption.txt", header=T, sep=";", na.strings="?")
